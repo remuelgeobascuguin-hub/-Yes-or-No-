@@ -7,28 +7,20 @@
     <title>Are You Special?</title>
 
     <style>
-
         @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap');
-
 
         * {
             box-sizing: border-box;
         }
 
-
         body {
-
             margin: 0;
-
             height: 100vh;
-
             overflow: hidden;
 
             display: flex;
             justify-content: center;
             align-items: center;
-
-            /* BLUE STARTING THEME */
 
             background: linear-gradient(
                 135deg,
@@ -38,58 +30,38 @@
 
             font-family: 'Fredoka', sans-serif;
 
-            transition:
-                background 0.8s ease;
-
+            transition: background 0.8s ease;
         }
-
 
         .container {
-
             text-align: center;
-
             position: relative;
-
             z-index: 2;
-
         }
 
-
         h1 {
-
             font-size: clamp(40px, 7vw, 75px);
 
             color: #4aa8ff;
 
             margin-bottom: 35px;
 
-            text-shadow:
-                3px 3px 0px white;
+            text-shadow: 3px 3px 0 white;
 
-            animation:
-                float 2.5s ease-in-out infinite;
+            animation: float 2.5s ease-in-out infinite;
 
-            transition:
-                color 0.8s ease;
-
+            transition: color 0.8s ease;
         }
 
-
         .buttons {
-
             display: flex;
-
             justify-content: center;
-
             align-items: center;
 
             gap: 20px;
-
         }
 
-
         button {
-
             border: none;
 
             padding: 16px 35px;
@@ -99,7 +71,6 @@
             font-family: 'Fredoka', sans-serif;
 
             font-size: 22px;
-
             font-weight: 600;
 
             cursor: pointer;
@@ -109,128 +80,118 @@
                 background 0.8s ease,
                 color 0.8s ease,
                 box-shadow 0.8s ease;
-
         }
 
-
         /* =========================
-           BLUE YES BUTTON
+           BLUE THEME
            ========================= */
 
         #yes {
-
             background: #69bfff;
-
             color: white;
 
-            box-shadow:
-                0 8px 0 #3c9de8;
-
+            box-shadow: 0 8px 0 #3c9de8;
         }
-
-
-        /* =========================
-           BLUE NO BUTTON
-           ========================= */
 
         #no {
-
             background: white;
-
             color: #4aa8ff;
 
-            box-shadow:
-                0 8px 0 #a8d9ff;
-
+            box-shadow: 0 8px 0 #a8d9ff;
         }
 
+        /* =========================
+           HOVER
+           ========================= */
 
         button:hover {
-
-            transform:
-                translateY(-4px)
-                scale(1.05);
-
+            transform: translateY(-4px) scale(1.05);
         }
-
 
         button:active {
-
-            transform:
-                translateY(3px);
-
+            transform: translateY(3px);
             box-shadow: none;
-
         }
-
 
         /* =========================
            PINK THEME
            ========================= */
 
         body.pink-theme {
-
             background: linear-gradient(
                 135deg,
                 #fff0f7,
                 #e9f5ff
             );
-
         }
-
 
         body.pink-theme h1 {
-
             color: #ff70a6;
-
         }
-
 
         body.pink-theme #yes {
-
             background: #ff8fbd;
 
-            box-shadow:
-                0 8px 0 #e86699;
-
+            box-shadow: 0 8px 0 #e86699;
         }
-
 
         body.pink-theme #no {
-
             color: #ff70a6;
 
-            box-shadow:
-                0 8px 0 #ffc2d9;
-
+            box-shadow: 0 8px 0 #ffc2d9;
         }
-
 
         /* =========================
            VERY YES
            ========================= */
 
         .very-yes {
-
             background: #ff4f81 !important;
-
             color: white !important;
 
-            box-shadow:
-                0 10px 0 #d93668 !important;
+            box-shadow: 0 10px 0 #d93668 !important;
 
-            transition:
-                transform 0.3s ease;
-
+            transition: transform 0.3s ease;
         }
 
+        /* =========================
+           RESTART BUTTON
+           ========================= */
+
+        #restart {
+            margin-top: 35px;
+
+            padding: 10px 24px;
+
+            font-size: 16px;
+
+            background: white;
+
+            color: #4aa8ff;
+
+            border: 2px solid #a8d9ff;
+
+            box-shadow: none;
+
+            opacity: 0.85;
+
+            transition:
+                transform 0.2s ease,
+                color 0.5s ease,
+                border-color 0.5s ease;
+        }
+
+        #restart:hover {
+            transform: scale(1.05);
+
+            opacity: 1;
+        }
 
         /* =========================
            PARTICLES
            ========================= */
 
         .particle {
-
             position: fixed;
 
             pointer-events: none;
@@ -241,37 +202,28 @@
 
             animation:
                 explode 1s ease-out forwards;
-
         }
-
 
         @keyframes explode {
 
             0% {
-
                 transform:
                     translate(0, 0)
                     scale(0.3)
                     rotate(0deg);
 
                 opacity: 1;
-
             }
 
-
             100% {
-
                 transform:
                     translate(var(--x), var(--y))
                     scale(1.4)
                     rotate(var(--rotation));
 
                 opacity: 0;
-
             }
-
         }
-
 
         /* =========================
            TITLE FLOAT
@@ -280,72 +232,43 @@
         @keyframes float {
 
             0%, 100% {
-
-                transform:
-                    translateY(0);
-
+                transform: translateY(0);
             }
-
 
             50% {
-
-                transform:
-                    translateY(-8px);
-
+                transform: translateY(-8px);
             }
-
         }
-
 
         /* =========================
            RED PULSE
            ========================= */
 
         .red-pulse {
-
-            animation:
-                redPulse 0.7s ease;
-
+            animation: redPulse 0.7s ease;
         }
-
 
         @keyframes redPulse {
 
             0% {
-
-                background:
-                    #e5f4ff;
-
+                background: #e5f4ff;
             }
-
 
             30% {
-
-                background:
-                    #ff6b6b;
-
+                background: #ff6b6b;
             }
-
 
             60% {
-
-                background:
-                    #ffb3b3;
-
+                background: #ffb3b3;
             }
-
 
             100% {
-
-                background:
-                    linear-gradient(
-                        135deg,
-                        #fff0f7,
-                        #e9f5ff
-                    );
-
+                background: linear-gradient(
+                    135deg,
+                    #fff0f7,
+                    #e9f5ff
+                );
             }
-
         }
 
     </style>
@@ -354,13 +277,11 @@
 
 <body>
 
-
     <div class="container">
 
         <h1>
             Are you Special?
         </h1>
-
 
         <div class="buttons">
 
@@ -368,33 +289,38 @@
                 Yes
             </button>
 
-
             <button id="no">
                 No
             </button>
 
         </div>
 
+        <button id="restart">
+            ↻ Restart
+        </button>
+
     </div>
 
 
     <script>
 
-
         const yesButton =
             document.getElementById("yes");
-
 
         const noButton =
             document.getElementById("no");
 
+        const restartButton =
+            document.getElementById("restart");
+
+
+        /* Starting size of VERY YES */
 
         let veryYesScale = 1.3;
 
 
-
         /* =========================
-           YES
+           YES BUTTON
            ========================= */
 
         yesButton.addEventListener(
@@ -402,7 +328,6 @@
             function(event) {
 
                 createExplosion(
-
                     event.clientX,
                     event.clientY,
 
@@ -412,51 +337,46 @@
                         "🌟",
                         "💫"
                     ]
-
                 );
 
             }
         );
 
 
-
         /* =========================
-           NO / VERY YES
+           NO / VERY YES BUTTON
            ========================= */
 
         noButton.addEventListener(
             "click",
             function(event) {
 
-
-                /* FIRST NO CLICK */
+                /* FIRST CLICK */
 
                 if (
-                    !noButton.classList
-                        .contains("very-yes")
+                    !noButton.classList.contains(
+                        "very-yes"
+                    )
                 ) {
 
+                    /* Change to pink */
 
-                    /* Turn pink */
-
-                    document.body
-                        .classList
-                        .add("pink-theme");
+                    document.body.classList.add(
+                        "pink-theme"
+                    );
 
 
                     /* Red pulse */
 
-                    document.body
-                        .classList
-                        .remove("red-pulse");
-
+                    document.body.classList.remove(
+                        "red-pulse"
+                    );
 
                     void document.body.offsetWidth;
 
-
-                    document.body
-                        .classList
-                        .add("red-pulse");
+                    document.body.classList.add(
+                        "red-pulse"
+                    );
 
 
                     /* Change button */
@@ -464,34 +384,28 @@
                     noButton.textContent =
                         "VERY YES!";
 
-
-                    noButton.classList
-                        .add("very-yes");
+                    noButton.classList.add(
+                        "very-yes"
+                    );
 
 
                     return;
-
                 }
-
 
 
                 /* =========================
                    EVERY VERY YES CLICK
                    ========================= */
 
-
                 veryYesScale += 0.25;
-
 
                 noButton.style.transform =
                     `scale(${veryYesScale})`;
 
 
-
                 /* Hearts + stars */
 
                 createExplosion(
-
                     event.clientX,
                     event.clientY,
 
@@ -504,16 +418,64 @@
                         "💕",
                         "❤️"
                     ]
-
                 );
 
             }
         );
 
 
+        /* =========================
+           RESTART BUTTON
+           ========================= */
+
+        restartButton.addEventListener(
+            "click",
+            function() {
+
+                /* Return to blue */
+
+                document.body.classList.remove(
+                    "pink-theme"
+                );
+
+                document.body.classList.remove(
+                    "red-pulse"
+                );
+
+
+                /* Reset VERY YES */
+
+                noButton.textContent =
+                    "No";
+
+                noButton.classList.remove(
+                    "very-yes"
+                );
+
+
+                /* Reset size */
+
+                veryYesScale = 1.3;
+
+                noButton.style.transform = "";
+
+
+                /* Remove any particles */
+
+                document
+                    .querySelectorAll(".particle")
+                    .forEach(function(particle) {
+
+                        particle.remove();
+
+                    });
+
+            }
+        );
+
 
         /* =========================
-           EXPLOSION
+           EXPLOSION FUNCTION
            ========================= */
 
         function createExplosion(
@@ -522,9 +484,7 @@
             symbols
         ) {
 
-
             const amount = 18;
-
 
 
             for (
@@ -533,14 +493,16 @@
                 i++
             ) {
 
-
                 const particle =
                     document.createElement("div");
 
 
-                particle.classList
-                    .add("particle");
+                particle.classList.add(
+                    "particle"
+                );
 
+
+                /* Random symbol */
 
                 particle.textContent =
                     symbols[
@@ -551,15 +513,16 @@
                     ];
 
 
+                /* Starting position */
 
                 particle.style.left =
                     x + "px";
-
 
                 particle.style.top =
                     y + "px";
 
 
+                /* Random direction */
 
                 const angle =
                     Math.random()
@@ -568,10 +531,8 @@
 
 
                 const distance =
-                    80
-                    + Math.random()
-                    * 180;
-
+                    80 +
+                    Math.random() * 180;
 
 
                 const moveX =
@@ -582,7 +543,6 @@
                 const moveY =
                     Math.sin(angle)
                     * distance;
-
 
 
                 particle.style.setProperty(
@@ -597,31 +557,34 @@
                 );
 
 
+                /* Random rotation */
 
                 particle.style.setProperty(
                     "--rotation",
                     (
-                        Math.random()
-                        * 720
+                        Math.random() * 720
                         - 360
                     ) + "deg"
                 );
 
 
+                /* Random size */
 
                 particle.style.fontSize =
                     (
-                        18
-                        + Math.random()
-                        * 25
+                        18 +
+                        Math.random() * 25
                     ) + "px";
 
 
+                /* Add particle */
 
-                document.body
-                    .appendChild(particle);
+                document.body.appendChild(
+                    particle
+                );
 
 
+                /* Remove after animation */
 
                 setTimeout(
                     function() {
